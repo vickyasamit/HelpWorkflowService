@@ -1,0 +1,115 @@
+API Design : 
+
+POST: /helpNode
+Request Body : 
+{
+"realm":"String",
+"level":"Integer",
+"parent":"String",
+"display":"String",
+"helpText": "String",
+"webAction": "String",
+"webActionUIName":"String",
+"permissions": ["premission1", "permission2"]
+}
+
+Response:
+200 OK
+{
+"id":"String",
+"realm":"String",
+"level":"Integer",
+"parent":"String",
+"display":"String",
+"helpText": "String",
+"webAction": "String",
+"webActionUIName":"String",
+"permissions": ["premission1", "permission2"]
+}
+
+GET: /helpNode
+Request Params : id="String"
+
+Response:
+{
+"id":"String",
+"realm":"String",
+"level":"Integer",
+"parent":"String",
+"display":"String",
+"helpText": "String",
+"webAction": "String",
+"webActionUIName":"String",
+"permissions": ["premission1", "permission2"]
+}
+
+GET: /parent
+URL : /parent?id="String"
+
+Response: 
+{
+"id":"String",
+"realm":"String",
+"level":"Integer",
+"parent":"String",
+"display":"String",
+"helpText": "String",
+"webAction": "String",
+"webActionUIName":"String",
+"permissions": ["premission1", "permission2"]
+}
+
+
+GET: /chidren
+URL : /chidren?id="String"
+
+Response:
+{
+"chilren": 
+	[
+		{
+		"id":"String",
+		"realm":"String",
+		"level":"Integer",
+		"parent":"String",
+		"display":"String",
+		"helpText": "String",
+		"webAction": "String",
+		"webActionUIName":"String",
+		"permissions": ["premission1", "permission2"]
+		},
+		{
+		"id":"String",
+		"realm":"String",
+		"level":"Integer",
+		"parent":"String",
+		"display":"String",
+		"helpText": "String",
+		"webAction": "String",
+		"webActionUIName":"String",
+		"permissions": ["premission1", "permission2"]
+		},
+		{
+		"id":"String",
+		"realm":"String",
+		"level":"Integer",
+		"parent":"String",
+		"display":"String",
+		"helpText": "String",
+		"webAction": "String",
+		"webActionUIName":"String",
+		"permissions": ["premission1", "permission2"]
+		}
+	],
+"errorDetail": 
+	[
+		"Error1",
+		"Error2"
+	]
+}
+
+Interface Design:
+
+Interface  HelpNodeOperations
+ Response<HelpNode> createHelpNode(HelpNode helpNode);
+ Response<HelpNode> getHelpNode(HelpNode helpNode);
